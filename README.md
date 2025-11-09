@@ -342,8 +342,16 @@ Ephemeris files are required to enable high-precision calculations for planets a
 
 ### Download Sources
 
-- **Swiss Ephemeris GitHub**: [https://github.com/aloistr/swisseph/tree/master/ephe](https://github.com/aloistr/swisseph/tree/master/ephe) (main planets only)
-- **Astrodienst Dropbox**: [https://www.dropbox.com/scl/fo/y3naz62gy6f6qfrhquu7u/h?rlkey=ejltdhb262zglm7eo6yfj2940&dl=0](https://www.dropbox.com/scl/fo/y3naz62gy6f6qfrhquu7u/h?rlkey=ejltdhb262zglm7eo6yfj2940&dl=0) (all files)
+**Official Sources (Recommended):**
+
+1. **Swiss Ephemeris GitHub Repository**:
+   - **GitHub**: [https://github.com/aloistr/swisseph/tree/master/ephe](https://github.com/aloistr/swisseph/tree/master/ephe)
+   - Contains main planet and moon files
+   - Can be cloned or downloaded directly from GitHub
+
+**Alternative Sources:**
+
+- **Astrodienst Dropbox**: [https://www.dropbox.com/scl/fo/y3naz62gy6f6qfrhquu7u/h?rlkey=ejltdhb262zglm7eo6yfj2940&dl=0](https://www.dropbox.com/scl/fo/y3naz62gy6f6qfrhquu7u/h?rlkey=ejltdhb262zglm7eo6yfj2940&dl=0) (all files including advanced options)
 
 ### File Types and Coverage
 
@@ -365,7 +373,28 @@ Each main ephemeris file covers a range of 600 years starting from the century i
 
 ### Installation Steps
 
-1. **Download the files** you need from one of the sources above
+1. **Download the files** you need from the official source:
+
+   **From GitHub:**
+   ```bash
+   # Clone the repository and copy ephe files
+   git clone https://github.com/aloistr/swisseph.git
+   cp -r swisseph/ephe/* ./ephe/
+   ```
+   
+   Or download individual files directly from GitHub:
+   ```bash
+   # Download specific files using curl
+   mkdir -p ephe
+   curl -L -o ephe/sepl_18.se1 https://raw.githubusercontent.com/aloistr/swisseph/master/ephe/sepl_18.se1
+   curl -L -o ephe/semo_18.se1 https://raw.githubusercontent.com/aloistr/swisseph/master/ephe/semo_18.se1
+   ```
+   
+   **Recommended files for most users:**
+   - `sepl_18.se1` - Planets (1800-2400)
+   - `semo_18.se1` - Moon (1800-2400)
+   - `seas_18.se1` - Main asteroids (1800-2400) - optional
+
 2. **Create a directory** for the ephemeris files (e.g., `./ephe`)
 3. **Place the files** in the directory:
    - Main planet/moon files go in the root of the directory
@@ -423,6 +452,7 @@ func main() {
 - If no ephemeris path is set, the library will use built-in Moshier ephemeris (lower precision)
 - For most astrological applications, downloading `sepl_18.se1` and `semo_18.se1` is sufficient
 - JPL ephemeris files provide the highest precision but are much larger
+- The GitHub repository ([https://github.com/aloistr/swisseph](https://github.com/aloistr/swisseph)) is the primary source for ephemeris files and contains the source code
 - More information can be found in the [Swiss Ephemeris documentation](https://www.astro.com/ftp/swisseph/doc/swisseph.htm)
 
 ## Planet Numbers
