@@ -32,6 +32,7 @@ func getEphePath() string {
 		"../../swisseph/ephe",
 		"./swisseph/ephe",
 		"./swisseph_/ephe",
+		"../ephe",
 	}
 
 	for _, path := range paths {
