@@ -1,0 +1,58 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+coverage.html
+
+# Dependency directories
+vendor/
+
+# Go workspace file
+go.work
+
+# Build artifacts
+bin/
+dist/
+*.o
+*.a
+
+# CGO build artifacts
+_cgo_export.h
+_cgo_flags
+_cgo_gotypes.go
+_cgo_main.c
+_cgo_export.c
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.vim/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+*.orig
+
+# Ephemeris files (large, should be downloaded separately)
+ephe/
+*.se1
+*.eph
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Log files
+*.log

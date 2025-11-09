@@ -1,0 +1,94 @@
+DUAL LICENSING NOTICE
+=====================
+
+This repository contains two distinct components with different licenses:
+
+1. GO BINDINGS (AGPL-3.0-or-later)
+   --------------------------------
+   The Go language bindings, wrapper code, and all Go source files in
+   this repository are licensed under the GNU Affero General Public
+   License version 3 or later (AGPL-3.0-or-later).
+
+2. SWISS EPHEMERIS (AGPL OR PROFESSIONAL LICENSE)
+   ----------------------------------------------
+   The Swiss Ephemeris C library source code IS included directly in this
+   repository in the `swisseph/` directory. The C source files are part
+   of this repository and are compiled automatically by CGO.
+
+   IMPORTANT: The combined work (Go bindings + Swiss Ephemeris) is
+   subject to DUAL LICENSING:
+
+   a) The Go bindings are licensed under AGPL-3.0-or-later
+   
+   b) The Swiss Ephemeris library is available under TWO license options:
+
+      Option 1: GNU Affero General Public License (AGPL-3.0-or-later)
+      - For open source projects
+      - When using the open source version, the entire combined work
+        (Go bindings + Swiss Ephemeris) is licensed under AGPL-3.0-or-later
+      - This ensures full compatibility and compliance with Swiss Ephemeris
+        licensing requirements
+      - This is the default and recommended approach for open source projects
+
+      Option 2: Swiss Ephemeris Professional License
+      - Commercial license available from Astrodienst AG
+      - Allows use in proprietary/commercial applications
+      - Requires purchasing a license from Astrodienst AG
+      - When using the professional version, the combined work is:
+        * Go bindings: AGPL-3.0-or-later
+        * Swiss Ephemeris: Professional License (proprietary)
+        * Combined work: Subject to both licenses
+      - Note: To use the Professional License, you must replace the
+        Swiss Ephemeris source code in the `swisseph/` directory with
+        the professionally licensed version from Astrodienst AG
+
+DISTRIBUTION SCENARIOS
+----------------------
+
+Scenario 1: Distribution with AGPL-3.0-or-later (Default)
+  - Go bindings + Swiss Ephemeris source code (both included)
+  - License: AGPL-3.0-or-later (both components)
+  - The combined work is fully AGPL-3.0-or-later compliant
+  - This is the default and recommended approach for open source projects
+  - All source code is included in this repository
+
+Scenario 2: Distribution with Professional License
+  - Go bindings + Swiss Ephemeris source code (professionally licensed version)
+  - Dual license: AGPL-3.0-or-later (Go bindings) + Swiss Ephemeris Professional License
+  - Requires valid Swiss Ephemeris Professional License from Astrodienst AG
+  - Requires replacing the Swiss Ephemeris source code with the professionally
+    licensed version
+  - Both licenses must be complied with
+
+IMPORTANT REQUIREMENTS
+----------------------
+
+Users of this library MUST:
+
+1. Comply with AGPL-3.0-or-later for the Go bindings portion
+2. Comply with Swiss Ephemeris licensing terms (AGPL or Professional
+   License) for the Swiss Ephemeris portion
+3. When distributing the combined work, ensure all recipients understand
+   the licensing nature and their obligations
+4. If using the Professional License, ensure you have a valid license
+   from Astrodienst AG and have replaced the source code accordingly
+
+For more information about Swiss Ephemeris licensing, visit:
+https://www.astro.com/swisseph/
+
+To obtain a Swiss Ephemeris Professional License, contact:
+Astrodienst AG, Switzerland
+https://www.astro.com/swisseph/
+
+================================================================================
+
+GO BINDINGS COPYRIGHT
+=====================
+
+Copyright (C) 2025-2026 Tejus Pratap <tejzpr@gmail.com>
+
+The Go language bindings, wrapper code, and this repository are
+licensed under the GNU Affero General Public License version 3 or later
+(AGPL-3.0-or-later).
+
+================================================================================
