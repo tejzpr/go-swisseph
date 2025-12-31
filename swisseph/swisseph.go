@@ -21,7 +21,8 @@
 package swisseph
 
 /*
-#cgo CFLAGS: -I${SRCDIR} -Wno-unused-result -Wno-format
+#cgo darwin CFLAGS: -I${SRCDIR} -std=c11 -Wno-unused-result -Wno-format
+#cgo !darwin CFLAGS: -I${SRCDIR} -Wno-unused-result -Wno-format
 #cgo LDFLAGS: -lm
 */
 import "C"

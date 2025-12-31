@@ -82,15 +82,26 @@
  *
  * Sun Studio C/C++, IBM XL C/C++, GNU C and Intel C/C++ (Linux systems) -> __thread
  * Borland, VC++ -> __declspec(thread)
+ * macOS with C11 -> _Thread_local (requires -std=c11)
  */
-#if !defined(TLSOFF) && !defined( __APPLE__ ) && !defined(WIN32) && !defined(DOS32)
-#if defined( __GNUC__ ) || defined( __CYGWIN__ ) 
-#define TLS     __thread
+#if !defined(TLSOFF)
+  #if defined(__APPLE__)
+    /* macOS: Use C11 thread_local if available, otherwise disable TLS */
+    #if (__STDC_VERSION__ >= 201112L) || (defined(__cplusplus) && __cplusplus >= 201103L)
+      #define TLS     _Thread_local
+    #else
+      #define TLS     /* Disabled on macOS without C11 */
+    #endif
+  #elif defined(WIN32) || defined(_WIN32)
+    #define TLS     __declspec(thread)
+  #elif defined( __GNUC__ ) || defined( __CYGWIN__ )
+    /* Linux and other GCC-based systems: Use __thread (GCC extension) */
+    #define TLS     __thread
+  #else
+    #define TLS     __declspec(thread)
+  #endif
 #else
-#define TLS     __declspec(thread)
-#endif
-#else
-#define TLS
+  #define TLS
 #endif
 
 #ifdef _WIN32		/* Microsoft VC 5.0 does not define MSDOS anymore */

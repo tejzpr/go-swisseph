@@ -25,7 +25,8 @@ import (
 )
 
 /*
-#cgo CFLAGS: -I${SRCDIR}/swisseph -Wno-unused-result -Wno-format
+#cgo darwin CFLAGS: -I${SRCDIR}/swisseph -std=c11 -Wno-unused-result -Wno-format
+#cgo !darwin CFLAGS: -I${SRCDIR}/swisseph -Wno-unused-result -Wno-format
 #include <stdlib.h>
 #include <string.h>
 #include "swephexp.h"
