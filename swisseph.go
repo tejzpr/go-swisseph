@@ -391,7 +391,7 @@ func Houses(tjdUt float64, geolat, geolon float64, hsys byte) HousesResult {
 }
 
 // HousesEx calculates house cusps with extended options
-func HousesEx(tjdUt float64, iflag int32, geolat, geolon, hsys byte) HousesResult {
+func HousesEx(tjdUt float64, iflag int32, geolat, geolon float64, hsys byte) HousesResult {
 	var cusps [37]C.double
 	var ascmc [10]C.double
 
@@ -428,7 +428,7 @@ func HousesEx(tjdUt float64, iflag int32, geolat, geolon, hsys byte) HousesResul
 }
 
 // HousesEx2 calculates house cusps with extended options (version 2)
-func HousesEx2(tjdUt float64, iflag int32, geolat, geolon, hsys byte) HousesResult {
+func HousesEx2(tjdUt float64, iflag int32, geolat, geolon float64, hsys byte) HousesResult {
 	var cusps [37]C.double
 	var ascmc [10]C.double
 	var cuspSpeed [37]C.double
